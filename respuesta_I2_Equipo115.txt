@@ -7,8 +7,57 @@ c-¿Puede GAMMA actualizar su FORK al estado del fork de ALFA?
 
 d-¿Los datos que tenía en mi repositorio , editados por mi, se pierden si quiero actualizar
 el fork?
-si, los datos se perderíana-¿Como actualizo mi repositorio, al estado que esté el repo que hice FORK?
+si, los datos se perderían
+
+a-¿Como actualizo mi repositorio, al estado que esté el repo que hice FORK?
 Con git pull
+
 b-¿Puede ALFA actualizar su FORK al estado del fork de GAMMA?
 Si
 
+e- realizar un listado, paso a paso ,de los comando necesarios para resolver este TP por
+orden de ejecución de los mismos junto con los apellidos y nombre de los alumnos
+
+Punto 1)
+[Gaggino Lucas] BETA
+git clone https://github.com/GagginoLucas/TP_SO_i2_Equipo115.git
+echo "" > /ruta/fork.txt,
+git add .
+git commit "creacion fork.txt"
+git push
+
+Punto 2)
+[De Gregorio Leonardo] GAMMA
+git clone https://github.com/LeoDG0/TP_SO_i2_Equipo115.git
+echo "Nombre: Leonardo de Gregorio" >> fork.txt
+echo "IP: 192.58.11" >> fork.txt
+echo "Hora: 22:06:41" >> fork.txt
+git add .
+git commit -m "datos gamma 2"
+git push origin main
+
+Punto 3)
+[Dongo Huaman Juan Pablo] ALFA
+git clone https://github.com/JuanPablo-DH/TP_SO_i2_Equipo115.git
+echo "Nombre: Juan Pablo Dongo Huaman" >> fork.txt
+echo "Ip: 192.168.56.1" >> fork.txt
+echo "Hora: 22:25:45" >> fork.txt
+git add .
+git commit -m "ALFA punto 3)"
+git push origin main
+
+Punto 4)
+[Gaggino Lucas] BETA 
+git clone https://github.com/GagginoLucas/TP_SO_i2_Equipo115.git
+echo "" > /ruta/NuevoDato.txt,
+git add .
+git commit "beta nuevodato"
+git push
+
+Punto 5)
+[De Gregorio Leonardo y Dongo Huaman Juan Pablo] GAMMA y ALFA
+git remote add upstream https://github.com/GagginoLucas/TP_SO_i2_Equipo115.git
+git fetch upstream
+git checkout main
+git rebase upstream/main
+git push -f origin main
